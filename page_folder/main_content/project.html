@@ -5,27 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../../css_folder/style.css">
+
 </head>
 <body>
-  <div include-html="../header.html">
-    <script>
-      window.addEventListener('load', function() {
-          var allElements = document.getElementsByTagName('*');
-          Array.prototype.forEach.call(allElements, function(el) {
-              var includePath = el.dataset.includePath;
-              if (includePath) {
-                var http = new XMLHttpRequest();
-                http.onreadystatechange = function () {
-                    if (this.readyState == 4 && this.status == 200) {
-                        el.outerHTML = this.responseText;
-                    }
-                };
-              http.open('GET', includePath, true);
-            http.send();
-        }
-          });
-    });
-    </script>
+  <div id="header">
+    <div id="main_top">
+      Coding HHS
+    </div>
+    <div id="content_box">
+      <button class="main_content" onclick="location.href='../home.html'">
+        Main
+      </button>
+      <button class="main_content" onclick="location.href='../page_folder/main_content/project.html'">
+        Project
+      </button>
+      <button class="main_content" onclick="location.href='../page_folder/main_content/language.html'">
+        Language
+      </button>
+      <button class="main_content" onclick="location.href='../page_folder/main_content/study.html'">
+        Study
+      </button>
+      <button class="main_content" onclick="location.href='../page_folder/main_content/prize.html'">
+        Prize
+      </button>
+    </div>
   </div>
 </body>
 </html>
